@@ -1,0 +1,11 @@
+ffmpeg -i "rtsp://admin:a123456789@5.5.3.107/cam/realmonitor?channel=1&subtype=0" -qscale 0 -filter_complex "[0:v]crop=w=620:h=1080:x=614:y=0,scale='515:904'[v]" -map "[v]"  -f mpegts -codec:v mpeg1video http://127.0.0.1:2000/test
+
+ ffmpeg -i "rtsp://admin:a123456789@5.5.3.107/cam/realmonitor?channel=1&subtype=0" -qscale 0 -filter_complex "[0:v]crop=w=1920:h=1080:x=0:y=0,scale='960:540'[v]" -map "[v]"  -f mpegts -codec:v mpeg1video http://127.0.0.1:2000/test
+
+ ffmpeg -i "rtsp://admin:HuaWei123@5.5.5.137:554/LiveMedia/ch1/Media1" -qscale 0 -filter_complex "[0:v]crop=w=1920:h=1080:x=0:y=0,scale='960:540'[v]" -map "[v]"  -f mpegts -codec:v mpeg1video http://127.0.0.1:2000/test
+
+rtsp://admin:Hisense@123@5.5.5.135:554/LiveMedia/ch1/Media1
+
+ffmpeg -i "rtsp://admin:Hisense@123@5.5.5.135:554/LiveMedia/ch1/Media1" -qscale 0 -filter_complex "[0:v]crop=w=1920:h=1080:x=0:y=0,scale='960:540'[v]" -map "[v]"  -f mpegts -codec:v mpeg1video http://127.0.0.1:2000/test
+
+ffmpeg -i "rtmp://5.5.5.11:1935/live/test" -qscale 0 -f mpegts -codec:v mpeg1video http://127.0.0.1:2000/test

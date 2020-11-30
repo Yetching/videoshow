@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.jsmpeg,#video-canvas{
+			width: 960px;
+			height: 540px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript" src="jsmpeg.js"></script>
+	<div id="video-container" class="jsmpeg" data-url="ws://127.0.0.1:3000"></div>
+	<canvas id="video-canvas"></canvas>
+	<canvas id="img-container"></canvas>
+	<video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" id="video"></video>
+	<script type="text/javascript">
+		var canvas = document.getElementById('video-canvas')
+		var url = 'ws://127.0.0.1:3000'
+		var player = new JSMpeg.Player(url, {canvas: canvas})
+		var video = document.getElementById('video')
+		player.play()
+		console.log(player)
+		console.log(video.attributes)
+		var a = document.getElementById('video-container')
+		console.log(a.children.length)
+		console.log(canvas)
+		var dataUrl = canvas.toDataURL("image/jpeg")
+		console.log(dataUrl)
+	</script>
+</body>
+</html>
